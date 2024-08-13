@@ -2,19 +2,22 @@
 
 namespace App\Repositories\Base;
 
+use Illuminate\Database\Eloquent\Model;
+
 class BaseRepository implements IBaseRepository
 {
+    protected $model;
     /**
      * Create a new class instance.
      */
-    public function __construct()
+    public function __construct(Model $model)
     {
-        //
+        $this->model = $model;
     }
 
     public function all()
     {
-        return User::all();
+        return $this->model->all();
     }
 
     public function create(array $data)

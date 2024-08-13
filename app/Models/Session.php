@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Session extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
     protected $fillable = [
         'user_id',
